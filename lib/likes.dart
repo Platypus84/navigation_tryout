@@ -7,7 +7,7 @@ class Likes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Like'),
+        Text('Likes'),
         Text('Hier findest du deine geliketen Nachrichten.'),
       ],
     );
