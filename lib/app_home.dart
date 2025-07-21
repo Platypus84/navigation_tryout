@@ -18,8 +18,59 @@ class _AppHomeState extends State<AppHome> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("AppHome")),
+        appBar: AppBar(
+          title: Center(child: Text("MyApp")),
+          backgroundColor: Color.fromRGBO(205, 220, 57, 1),
+        ),
         body: Center(child: Text('Hello World!')),
+        bottomNavigationBar: NavigationBar(
+          backgroundColor: Color.fromRGBO(205, 220, 57, 1),
+          labelTextStyle: WidgetStateTextStyle.resolveWith((Set states) {
+            final Color color = states.contains(WidgetState.selected)
+                ? Color.fromRGBO(33, 74, 44, 1)
+                : Colors.black;
+            return TextStyle(color: color);
+          }),
+          //fixedColor: Colors.white,
+          elevation: 0,
+          onDestinationSelected: (int index) {
+            // setState(() {
+            //   currentPageIndex = index;
+            // });
+          },
+          indicatorColor: Color.fromRGBO(33, 74, 44, 1),
+
+          //selectedIndex: currentPageIndex,
+          destinations: const <Widget>[
+            NavigationDestination(
+              //selectedIcon: Icon(Icons.home_outlined, color: Colors.white),
+              icon: Icon(Icons.home_outlined, color: Colors.white),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              //selectedIcon: Icon(Icons.mail_outline, color: Colors.white),
+              icon: Badge(
+                label: Text('5'),
+                textColor: Color(0xff000000),
+                backgroundColor: Color.fromARGB(255, 255, 196, 0),
+                child: Icon(
+                  Icons.newspaper,
+                  color: Color.fromRGBO(33, 74, 44, 1),
+                ),
+              ),
+              label: 'News',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.favorite, color: Color.fromRGBO(33, 74, 44, 1)),
+              //selectedIcon: Icon(Icons.star_outline_outlined, color: Colors.white),
+              label: 'Likes',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.person_2, color: Color.fromRGBO(33, 74, 44, 1)),
+              label: 'Profile',
+            ),
+          ],
+        ),
       ),
     );
   }

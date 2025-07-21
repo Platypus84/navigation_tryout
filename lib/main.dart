@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation_tryout/app_home.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,11 +10,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('AppHome')),
-        body: Center(child: Text('Hello World!')),
-      ),
-    );
+    return MaterialApp(home: AppHome());
   }
 }
