@@ -6,7 +6,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Text('Profil'), Icon(Icons.person), Text('Max Mustermann')],
+      children: [Text('Profile'), Icon(Icons.person), Text('Max Mustermann')],
     );
   }
 }

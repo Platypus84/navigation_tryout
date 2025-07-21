@@ -5,6 +5,6 @@ class News extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [Text('New'), Icon(Icons.calendar_month)]);
+    return Column(children: [Text('News'), Icon(Icons.calendar_month)]);
   }
 }
